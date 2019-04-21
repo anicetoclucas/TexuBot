@@ -1,2 +1,2 @@
 # TexuBot
-Twitch bot
+A simple Twitch bot.
