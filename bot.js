@@ -1,10 +1,11 @@
 const tmi = require('tmi.js');
+const credentials = require('./config/credentials.json');
 
 // Define configuration options
 const opts = {
   identity: {
     username: "Texugote",
-    password: "oauth:uwloqfzzxs44hijucv4y3uizkun8ik"
+    password: credentials.twitch.password
   },
   channels: [
     "Texugote"
