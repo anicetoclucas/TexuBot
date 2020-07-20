@@ -24,13 +24,16 @@ mongodb.MongoClient.connect(process.env.TOKEN_DB, {
   console.log(`[mongodb] Erro: ${err}`);
 })
 
+var defaultPort = process.env.PORT || 80
+
 //tmi config
 const opts = {
   options: {
     debug: true
   },
   connection: {
-    reconnect: true
+    reconnect: true,
+    port: defaultPort
   },
   identity: {
     username: "Texugote",
