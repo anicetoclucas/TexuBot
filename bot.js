@@ -27,7 +27,7 @@ mongodb.MongoClient.connect(process.env.TOKEN_DB, {
 //tmi config
 const opts = {
   options: {
-    debug: false
+    debug: true
   },
   connection: {
     reconnect: true
