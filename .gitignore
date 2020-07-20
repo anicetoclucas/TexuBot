@@ -62,3 +62,7 @@ typings/
 
 #credentials
 config/
+
+#tests
+
+teste.js

@@ -1,0 +1,29 @@
+{
+  "name": "texubot",
+  "version": "1.0.0",
+  "description": "A simple bot for twitch",
+  "main": "bot.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "mongodb": "^3.5.9",
+    "tmi.js": "^1.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "run": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TemptingBadger/TexuBot.git"
+  },
+  "keywords": [
+    "twitch",
+    "bot"
+  ],
+  "author": "TemptingBadger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TemptingBadger/TexuBot/issues"
+  },
+  "homepage": "https://github.com/TemptingBadger/TexuBot#readme"
+}
