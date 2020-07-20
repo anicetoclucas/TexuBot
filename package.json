@@ -10,7 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "run": "node ."
+    "start": "node bot.js"
   },
   "repository": {
     "type": "git",
