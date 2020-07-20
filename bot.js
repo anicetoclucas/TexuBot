@@ -37,8 +37,8 @@ const opts = {
     debug: true
   },
   connection: {
-    reconnect: true,
-    port: defaultPort
+    port: defaultPort,
+    secure: true
   },
   identity: {
     username: "Texugote",
