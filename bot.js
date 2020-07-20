@@ -5,12 +5,6 @@ const {esperar} = require('./functions/esperar');
 const {salvarDB} = require('./functions/salvar');
 const {enterChannels} = require('./functions/entrarCanal')
 
-if(process.env.PORT){
-  console.log(`[node] process.env.PORT = ${process.env.PORT}`);
-  var defaultPort = process.env.PORT;
-}else{
-  var defaultPort = 80;
-}
 const prefix = "!";
 var isDBOK = false;
 
@@ -34,10 +28,10 @@ mongodb.MongoClient.connect(process.env.TOKEN_DB, {
 //tmi config
 const opts = {
   options: {
-    debug: true
+    debug: false
   },
   connection: {
-    port: defaultPort,
+    port: process.env.PORT,
     secure: true
   },
   identity: {
