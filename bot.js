@@ -3,10 +3,16 @@ const mongodb = require('mongodb');
 require('dotenv').config();
 const {esperar} = require('./functions/esperar');
 const {salvarDB} = require('./functions/salvar');
-const {enterChannels} = require('./functions/entrarCanal')
+const {enterChannels} = require('./functions/entrarCanal');
+const express = require('express');
+const app = express();
 
 const PORT = process.env.PORT || 80;
 console.log(PORT);
+
+app.listen(port, () => {
+  console.log(`[express] Ouvindo a porta: ${port}`);
+});
 
 const prefix = "!";
 var isDBOK = false;
@@ -47,6 +53,9 @@ const opts = {
 const client = new tmi.client(opts);
 
 console.log("[node] Iniciando o bot...");
+
+// Connect to Twitch:
+client.connect();
 
 client.on('connected', async (addr, port) => {
   //Wait for DB
@@ -113,6 +122,3 @@ client.on("resub", (channel, username, months, message, userstate, methods) => {
     client.say(channel, `${username} se inscreveu no canal por ${months}! GayPride`);
   }
 });
-
-// Connect to Twitch:
-client.connect();
