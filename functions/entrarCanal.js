@@ -3,8 +3,8 @@ exports.enterChannels = async function enterChannels(client, channel_list) {
         if (channel == "texugote") return;
         let mods = await client.mods(channel);
         if (!mods.includes('texugote')) {
-            client.say(channel, `Eu não sou mod no seu canal, para eu funcionar direito me dê Mod. Comando: '/mod @texugote'`);
             console.log(`[enterChannels] Texugote não é Mod em ${channel} `);
+            client.say(channel, `Eu não sou mod no seu canal, para eu funcionar direito me dê Mod. Comando: '/mod @texugote'`);
         }
         client.join(channel).then(() => {
             console.log(`[enterChannels] Conectado ao canal #${channel}`);
@@ -12,5 +12,4 @@ exports.enterChannels = async function enterChannels(client, channel_list) {
             console.log(err);
         })
     });
-
 }

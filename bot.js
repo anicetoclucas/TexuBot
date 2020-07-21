@@ -32,7 +32,6 @@ mongodb.MongoClient.connect(process.env.TOKEN_DB, {
   console.log(`[mongodb] Erro: ${err}`);
 })
 
-
 //tmi config
 const opts = {
   options: {
@@ -74,13 +73,15 @@ client.on('message', async (target, context, msg, self)=>{
   let args = msg.split(/ +/);
   command = args.shift();
   args = args.join(" ");
+  // console.log(`Comando: ${command}`);
+  // console.log(`Argumentos: ${args}`);
 
   if(command == `${prefix}addcanal`){
     if (channel_list["channels"].includes(args)){
       client.say(target, `@${context.username}, o bot já está nesse canal de @${args}.`);
       return;
     } else{
-      channel_list["channels"].push();
+      channel_list["channels"].push(args);
       salvarDB(db_twitch, channel_list,'channels');
       client.say(args, `Entrei no canal. CoolCat`);
       enterChannels(client, channel_list);
