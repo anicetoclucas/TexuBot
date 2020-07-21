@@ -5,6 +5,9 @@ const {esperar} = require('./functions/esperar');
 const {salvarDB} = require('./functions/salvar');
 const {enterChannels} = require('./functions/entrarCanal')
 
+const PORT = process.env.PORT || 80;
+console.log(PORT);
+
 const prefix = "!";
 var isDBOK = false;
 
@@ -31,7 +34,7 @@ const opts = {
     debug: false
   },
   connection: {
-    port: process.env.PORT,
+    port: PORT,
     secure: true
   },
   identity: {
