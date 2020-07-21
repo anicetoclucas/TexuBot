@@ -8,7 +8,6 @@ const express = require('express');
 const app = express();
 
 const PORT = process.env.PORT || 80;
-console.log(PORT);
 
 app.listen(PORT, () => {
   console.log(`[express] Ouvindo a porta: ${PORT}`);
@@ -40,8 +39,8 @@ const opts = {
     debug: false
   },
   connection: {
-    port: PORT,
-    secure: true
+    secure: true,
+    reconnect: true
   },
   identity: {
     username: "Texugote",
